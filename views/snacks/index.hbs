@@ -1,0 +1,25 @@
+<div class ="container">
+<h1>Snacks Page</h1>
+<a href="snacks/new">Add a Snack</a>
+{{#each snacks}}
+<div class="row">
+  <div class="col-md-2">
+    <img src="{{ this.image_url }}" class="image">
+  </div>
+<div class="col-md-6">
+  <h2><a href="/snacks/{{ this.id }}">{{ this.name }}</h2>
+  <p>Review: {{ this.review }}</p>
+  <p>Rating {{ this.rating }}</p>
+  <span>
+  <a href="/snacks/{{ this.id }}/edit" type="button" name="button" class="btn btn-success">Edit Snack</a>
+  <form action="/snacks/{{ this.id }}?_method=DELETE" method="POST">
+           <input class="btn btn-sm btn-danger"
+           type="submit"
+           name="delete"
+           value="Delete Snack">
+       </form>
+     </span>
+</div>
+{{/each}}
+</div>
+</div>

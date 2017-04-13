@@ -1,0 +1,38 @@
+<div class="container">
+  <h1>Edit {{ snack.name }}</h1>
+  <a href="/snacks">Back</a>
+   <hr>
+   <form method="POST" action="/snacks/{{ snack.id }}?_method=PUT"  class"well">
+     <div class="row">
+       <div class="col-md-6">
+         <div class="form-group">
+           <label for="name">Name</label>
+           <input type="string" name="name" class="form-control" value="{{snack.name}}" id="name" placeholder="New Snack">
+         </div>
+       </div>
+      <div class="col-md-6">
+         <div class="form-group">
+           <label for="image_url">Image URL</label>
+           <input type="text" name="image_url" value="{{snack.image_url}}" class="form-control" id="image_url" placeholder="Image URL">
+         </div>
+       </div>
+     </div>
+       <div class="col-md-6">
+         <div class="form-group">
+           <label for="rating">Rating</label>
+           <input type="number" name="rating" value="{{snack.rating}}" min="0" max="10" class="form-control" id="rating" placeholder="My Rating">
+         </div>
+       </div>
+     </div>
+
+     <div class="row">
+       <div class="col-md-12">
+         <div class="form-group">
+           <label for="review">Review</label>
+           <input type="text" name="review" value="{{snack.review}}" class="form-control" id="review" placeholder="Review">
+         </div>
+       </div>
+     </div>
+     <button type="submit" class="btn btn-default">Submit</button>
+   </form>
+ </div>

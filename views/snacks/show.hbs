@@ -1,0 +1,22 @@
+<div class="container">
+   <h1>{{ snacks.name }}</h1>
+   <a href="/snacks">Go to All Snacks</a>
+   <div class="row">
+     <div class="col-md-2">
+       <img src="{{ snack.image_url }}"
+         class="image">
+     </div>
+     <div class="col-md-6">
+       <p>name: {{ snack.name }}</p>
+       <p>review: {{ snack.review }}</p>
+       <p>rating: {{ snack.rating }}</p>
+       <a href="/snacks/{{ snack.id }}/edit" type="button" name="button" class="btn btn-success">Edit</a>
+       <form action="/snacks/{{ snack.id }}?_method=DELETE" method="POST">
+           <input class="btn btn-sm btn-danger"
+           type="submit"
+           name="delete"
+           value="Delete Snack">
+       </form>
+     </div>
+   </div>
+ </div>
